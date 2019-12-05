@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            // 関数を定義
+            function calcBMI() {
+                // input入力の値を取得
+                var h = document.getElementById("m").value;
+                var w = document.getElementById("kg").value;
+                // BMIの計算
+                var bmi = w / (h * h);
+                // BMIの値からテキストの書き換え
+                if (bmi < 18.5) {
+                    document.getElementById("result").textContent = "やせ気味";
+                } else if (bmi >= 25) {
+                    document.getElementById("result").textContent = "太り気味";
+                } else {
+                    document.getElementById("result").textContent = "標準";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>BMI計算機</h2>
+        身長(m):<input id="m" value="1.7" />
+        体重(kg):<input id="kg" value="65" />
+        <!-- クリックで計算 -->
+        <button onclick="calcBMI()">判定！</button>
+        <p id="result"></p>
+    </body>
+</html>
